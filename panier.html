@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="./css/commun.css">
+    <link rel="stylesheet" href="./css/panier.css">
+
+    <script defer src="./js/panier.js"></script>
+    <script defer src="./js/app.js"></script>
+
+    <title>Panier</title>
+</head>
+<body>
+    <header>
+        <div class="into-header">
+            <div><a href="index.html">Orin'ours</a></div>
+            
+            <nav>
+                <a href="panier.html" id="panier">
+                    <div class="nb-articles cache"> </div>
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Panier</p>
+                </a>
+                
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main>
+        
+        <div id="sectionbloc">
+            <section id="sectionArticles">
+                <h2 class="panier-art-titre">Votre panier</h2>
+
+                <div id="liste-panier">
+    
+                    <div class="articles-titre">
+                        <div>NOM</div><div>COULEUR</div><div>PRIX</div>
+                    </div>
+
+                    <div class="paniervide cache">Votre panier est vide <i class="far fa-frown"></i></div>
+                    
+                    <!-- Espace dynamique -->
+                    
+                </div>
+
+                <div id="panierTotaux">
+
+                    <!-- Espace dynamique -->
+
+                </div>
+                
+            </section>
+
+            <section id="sectionFormulaire">
+                <h2 class="">Vos informations</h2>
+
+                <form id="contact">
+                    <label for="firstName">Prénom :</label>
+                    <input id="firstName" type="text" name="firstName" placeholder="Prénom" class="">
+                    <div id="firstN" class="cache">2 caractères minimum sans chiffres</div>
+
+                    <label for="lastName">Nom :</label>
+                    <input id="lastName" type="text" name="lastName" placeholder="Nom" class="">
+                    <div id="lastN" class="cache">2 caractères minimum sans chiffres</div>
+
+                    <label for="address">Adresse :</label>
+                    <input id="address" type="text" name="address" placeholder="Adresse" class="">
+                    <div id="addrS" class="cache"> 2 caractères minimum</div>
+
+                    <label for="city">Ville :</label>
+                    <input id="city" type="text" name="city" placeholder="Ville" class="">
+                    <div id="citY" class="cache">2 caractères minimum sans chiffre</div>
+
+                    <label for="email">Mail :</label>
+                    <input id="email" type="text" name="email" placeholder="Email" class="">
+                    <div id="emaiL" class="cache">Email incorrecte format d'email : text@texte.text</div>
+
+                    <button>Commander</button>
+                    <a href="index.html" class="retour text-center">Continuez vos achats</a>
+                </form>
+            </section>
+            
+        </div>
+    
+    </main>
+
+
+    <footer>
+
+        <div class="footer_div_centrale">
+            <section>
+                <h6>A PROPOS</h6>
+                <a href="">Conditions générales de ventes</a>
+                <a href="">Conditions générales d'utilisation</a>
+                <a href="">Données personnelles</a>
+                <a href="">Mentions</a>
+            </section>
+            <section>
+                <h6>SERVICES</h6>
+                <a href="">SAV</a>
+                <a href="">Besoin d'aide ?</a>
+                <a href="">Contactez-nous</a>
+            </section>
+            <section>
+                <h6>LE GROUPE ORINOCO</h6>
+                <a href="">A propos d'Orinours</a>
+                <a href="">Recrutement</a>
+                <a href="">Groupe Orinoco</a>
+            </section>
+            <section>
+                <h6>NOS AUTRES SITES</h6>
+                <a href=""><i class="fas fa-tshirt"></i>Oritextil</a>
+                <a href=""><i class="fas fa-book"></i>Oribook</a>
+                <a href=""><i class="fas fa-camera"></i>Oricam</a>
+                <a href=""><i class="fas fa-chair"></i>Orikea</a>
+            </section>
+            <section>
+                <h6>PAIEMENTS</h6>
+                <div id="footer_paiement">
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+            </section>
+        </div>
+
+        <div id="copyright" class="footer_div_centrale">
+            <p><i class="far fa-copyright"></i>2021 - Tous droits réservés - Orinoco & filiales </p>
+        </div>
+
+    </footer>
+</body>
+</html>
