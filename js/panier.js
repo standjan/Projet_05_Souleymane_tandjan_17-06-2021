@@ -30,7 +30,7 @@ function pagePanier() {
         tableauPanier.appendChild(carteFormatPanier);
 
     }
-
+//Ajout de button supprimer
     addButtonDelete();
 
     function addButtonDelete() {
