@@ -11,8 +11,8 @@ function mainIndex(){
 
     fetch(urlApi)
 
-    .then(function(response) {
-         function serveur() {
+       .then(function(response) {
+
             if (response.serveur) {
                 const serveur = response.serveur;
             
@@ -29,10 +29,8 @@ function mainIndex(){
                         </a>
                     </nav>
                 </div>
-            </header>`;
-        }
-                
-}
+            </header>`; 
+        };
 
         return response.json();
 
@@ -85,21 +83,12 @@ function mainIndex(){
         }
     })
 
-    .catch((error) => {
-        // Message d'erreur si problème de serveur
-        function problemeServeur() {
-
+    .catch((error) => {  // Message d'erreur si problème de serveur
             msgAccueil.classList.add("cache");
             mainIndex.innerHTML = 
             `<div class="cardError">
                 <p> Désolé, nous n'avons pas pu charger les articles.</p> 
                 <p> Vérifier que le serveur soit bien fonctionnel.</p>
-            </div>`;
-            
-        }
-
-        problemeServeur()
-        
-    });
+            </div>`; });
 };
 
