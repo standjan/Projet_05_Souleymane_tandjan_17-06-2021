@@ -3,7 +3,7 @@ mainIndex()
 
 function mainIndex(){
 
-    const mainIndex = document.querySelector("#mainIndex");
+    const mainIndex = document.querySelector ("#mainIndex");
     const msgAccueil = document.querySelector(".msg-accueil");
 
 
@@ -84,6 +84,7 @@ function mainIndex(){
             }
         }
     })
+
     .catch((error) => {
         // Message d'erreur si problème de serveur
         function problemeServeur() {
@@ -100,5 +101,5 @@ function mainIndex(){
         problemeServeur()
         
     });
-}
+};
 
