@@ -16,20 +16,11 @@ function mainIndex(){
             if (response.serveur) {
                 const serveur = response.serveur;
             
-                document.getElementById.innerHTML = 
-                `<header>
-                <div class="into-header">
-                    <div><a href="index.html">Orin'ours</a></div>
-                    
-                    <nav>
-                        <a href="panier.html" id="panier">
-                            <div class="nb-articles cache"> </div>
-                            <i class="fas fa-shopping-basket"></i>
-                            <p>Panier</p>
-                        </a>
-                    </nav>
-                </div>
-            </header>`; 
+                mainIndex.innerHTML = 
+                `<div class="cardError">
+                <p> Désolé, nous n'avons pas pu charger les articles.</p> 
+                <p> Vérifier que le serveur soit bien fonctionnel.</p>
+            </div>`;
         };
 
         return response.json();
