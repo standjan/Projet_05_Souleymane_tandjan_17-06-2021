@@ -46,7 +46,7 @@ function pagePanier() {
             artPanier.classList.remove("articles-panier-beta");
         }
     }
-
+//---calcul le total de prix
     const allPrices = document.querySelectorAll(".price"); 
     const arrayAllPrices = Array.from(allPrices)
 
@@ -83,7 +83,6 @@ function deleteArt(indexDel) {
     window.location.reload();
     
 }
-
 
 function nbArticlesDansPanier() {
 
@@ -241,7 +240,7 @@ function verifForm() {
         }
 
     });
-
+//-----verification des lettres
     form.address.addEventListener('change', function() {
         validAddress(this);
 
@@ -275,7 +274,7 @@ function verifForm() {
         }
         
     });
-
+//-- Validation des emails
     form.email.addEventListener('change', function() {
         validEmail(this);
 
