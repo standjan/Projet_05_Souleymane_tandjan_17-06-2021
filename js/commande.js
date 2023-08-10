@@ -28,7 +28,7 @@ function messageCommande() {
     mainCommande.appendChild(messageOrderId);
 
 }
-
+//---restauration du message d'accueil
 function restoreAccueil() {
 
     let buttonBack = document.querySelector("button");

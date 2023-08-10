@@ -10,7 +10,7 @@ function pagePanier() {
         const messagePanierVide = document.querySelector(".paniervide ")
         messagePanierVide.classList.remove("cache");
     }
-
+//------choisir
     for (let articleChoisi in numGetPanier) {
     
         let articlePanier = numGetPanier[articleChoisi];
@@ -207,7 +207,7 @@ function envoieFormulaire() {
 
 // --- Vérification Formulaire avant envoie
 function verifForm() {
-
+//-----------verification de prenom
     form.firstName.addEventListener('change', function() {
         validLetter(this);
 
@@ -223,7 +223,7 @@ function verifForm() {
 
         }
     });
-
+//------------nom
     form.lastName.addEventListener('change', function() {
         validLetter(this);
 
@@ -257,7 +257,7 @@ function verifForm() {
         }
         
     });
-
+//--------------Verification de ville
     form.city.addEventListener('change', function() {
         validLetter(this);
 
@@ -294,6 +294,7 @@ function verifForm() {
 
 // REGEX pour formulaire
 function validEmail(inputEmail) {
+    
     let emailRegex = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
 
     let testEmail = emailRegex.test(inputEmail.value);
