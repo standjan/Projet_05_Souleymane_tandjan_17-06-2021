@@ -69,7 +69,7 @@ function pagePanier() {
     affichageTotal.appendChild(blocTotal);
     
 }
-
+//--supprimé des articles dans le panier--//
 
 function deleteArt(indexDel) {
 
@@ -83,7 +83,7 @@ function deleteArt(indexDel) {
     window.location.reload();
     
 }
-
+//--Afficher le nombre d'article du panier
 function nbArticlesDansPanier() {
 
     let getPanier = localStorage.getItem("panierKey");

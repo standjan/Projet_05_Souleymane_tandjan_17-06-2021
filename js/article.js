@@ -73,7 +73,7 @@ function mainArticle() {
 
             buttonSendPanier.addEventListener("click", function(event) {
     
-                event.preventDefault();
+                event.preventDefault(); 
 
                 const nameArticleChoisi = document.querySelector("h2");
                 const urlArticleChoisi = window.location.search;
