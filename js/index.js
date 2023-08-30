@@ -1,6 +1,5 @@
 mainIndex()
 
-
 function mainIndex(){
 
     const mainIndex = document.querySelector ("#mainIndex");
