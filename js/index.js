@@ -1,6 +1,5 @@
 mainIndex()
 
-
 function mainIndex(){
 
     const mainIndex = document.querySelector ("#mainIndex");       // on declare MainIndex pour retourner l'element MainIdex dans le DOM//

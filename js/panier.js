@@ -10,7 +10,7 @@ function pagePanier() {
         const messagePanierVide = document.querySelector(".paniervide ")
         messagePanierVide.classList.remove("cache");
     }
-
+//------choisir
     for (let articleChoisi in numGetPanier) {
     
         let articlePanier = numGetPanier[articleChoisi];
@@ -46,7 +46,7 @@ function pagePanier() {
             artPanier.classList.remove("articles-panier-beta");
         }
     }
-
+//---calcul le total de prix
     const allPrices = document.querySelectorAll(".price"); 
     const arrayAllPrices = Array.from(allPrices)
 
@@ -69,7 +69,7 @@ function pagePanier() {
     affichageTotal.appendChild(blocTotal);
     
 }
-
+//--supprimé des articles dans le panier--//
 
 function deleteArt(indexDel) {
 
@@ -83,8 +83,7 @@ function deleteArt(indexDel) {
     window.location.reload();
     
 }
-
-
+//--Afficher le nombre d'article du panier
 function nbArticlesDansPanier() {
 
     let getPanier = localStorage.getItem("panierKey");
@@ -208,7 +207,7 @@ function envoieFormulaire() {
 
 // --- Vérification Formulaire avant envoie
 function verifForm() {
-
+//-----------verification de prenom
     form.firstName.addEventListener('change', function() {
         validLetter(this);
 
@@ -224,7 +223,7 @@ function verifForm() {
 
         }
     });
-
+//------------nom
     form.lastName.addEventListener('change', function() {
         validLetter(this);
 
@@ -241,7 +240,7 @@ function verifForm() {
         }
 
     });
-
+//-----verification des lettres
     form.address.addEventListener('change', function() {
         validAddress(this);
 
@@ -258,7 +257,7 @@ function verifForm() {
         }
         
     });
-
+//--------------Verification de ville
     form.city.addEventListener('change', function() {
         validLetter(this);
 
@@ -275,7 +274,7 @@ function verifForm() {
         }
         
     });
-
+//-- Validation des emails
     form.email.addEventListener('change', function() {
         validEmail(this);
 
@@ -295,6 +294,7 @@ function verifForm() {
 
 // REGEX pour formulaire
 function validEmail(inputEmail) {
+    
     let emailRegex = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
 
     let testEmail = emailRegex.test(inputEmail.value);
