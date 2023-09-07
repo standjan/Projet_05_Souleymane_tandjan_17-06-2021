@@ -3,15 +3,15 @@ restoreAccueil()
 
 function messageCommande() {
 
-    localStorage.removeItem("panierKey");
+    localStorage.removeItem("panierKey"); // retire la clé dans le localstaorage après avoir passé la commande//
 
     let orderIdOfOrder = localStorage.getItem("orderKey");
     let priceOfOrder = localStorage.getItem("totalKey");
 
-    let mainCommande = document.querySelector("main");
+    let mainCommande = document.querySelector("main"); //  selectionner le main //
     
-    let messageOrderId = document.createElement("div");
-    messageOrderId.classList.add("message");
+    let messageOrderId = document.createElement("div");  // consiste a créer dans le DOM l'element DIV
+    messageOrderId.classList.add("message");  // ajoute le message de remerciement//
     messageOrderId.innerHTML =
     `
     <h1>Merci</h1>
@@ -25,19 +25,19 @@ function messageCommande() {
     
     <button>Revenir à l'accueil</button>`;
 
-    mainCommande.appendChild(messageOrderId);
+    mainCommande.appendChild(messageOrderId); // on crée le noeud de mainCommande//
 
 }
 
-function restoreAccueil() {
+function restoreAccueil() { // la fonction pour restaurer la page d'accueil //
 
-    let buttonBack = document.querySelector("button");
-    buttonBack.addEventListener("click", function() {
+    let buttonBack = document.querySelector("button");  // on selectionne le bouton pour, on ecoute les evenements//
+    buttonBack.addEventListener("click", function() { 
 
         localStorage.removeItem("totalKey");
         localStorage.removeItem("orderKey");
 
-        location.replace("./index.html");
+        location.replace("./index.html");  // on remplace la page de commande par la index//
 
     })
 }

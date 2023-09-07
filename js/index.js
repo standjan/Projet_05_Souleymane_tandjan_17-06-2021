@@ -3,17 +3,17 @@ mainIndex()
 
 function mainIndex(){
 
-    const mainIndex = document.querySelector ("#mainIndex");
-    const msgAccueil = document.querySelector(".msg-accueil");
+    const mainIndex = document.querySelector ("#mainIndex");       // on declare MainIndex pour retourner l'element MainIdex dans le DOM//
+    const msgAccueil = document.querySelector(".msg-accueil");     // on declare MsgAccueil = pour retourner l'element Msg-accueil //
 
 
     let urlApi = `http://localhost:3000/api/teddies/`;
 
-    fetch(urlApi)
+    fetch(urlApi)                    //  on fait le fetch pour recuperer informations des Ours//
 
-       .then(function(response) {
+       .then(function(response) {     
 
-            if (response.serveur) {
+            if (response.serveur) {   // on utilise la condition SI au cas ou le serveur ne fonctionne pour retourner ce message //
                 const serveur = response.serveur;
             
                 mainIndex.innerHTML = 
@@ -23,23 +23,23 @@ function mainIndex(){
             </div>`;
         };
 
-        return response.json();
+        return response.json();   // il nous retourne en JSON //
 
     })
-    .then(function(response) {
+    .then(function(response) {   
 
         const objets = response;
         const nombreDePeluches = objets.length;
 
-        creationCartePourProduits()
-        bientotNouveauProduits()
+        creationCartePourProduits()   // creation de la carte produits //
+        bientotNouveauProduits()     //  et le messsages de la derniere carte afin d'indique l'arriver des nouveaux produits//
 
 
         function bientotNouveauProduits() {
            
             if (nombreDePeluches%2) {
 
-                let bientotNewPeluche = document.createElement("bientot");
+                let bientotNewPeluche = document.createElement("bientot");  
                 bientotNewPeluche.classList.add("bientot");
                 bientotNewPeluche.innerHTML = 
                 `<div class="text_bientot"> Bientôt <br>
@@ -50,7 +50,7 @@ function mainIndex(){
             }
         }
         
-        function creationCartePourProduits() {
+        function creationCartePourProduits() {     
             // Répartition des objets en forme de carte
             for (let objet in objets) {
             
@@ -74,12 +74,5 @@ function mainIndex(){
         }
     })
 
-    .catch((error) => {  // Message d'erreur si problème de serveur
-            msgAccueil.classList.add("cache");
-            mainIndex.innerHTML = 
-            `<div class="cardError">
-                <p> Désolé, nous n'avons pas pu charger les articles.</p> 
-                <p> Vérifier que le serveur soit bien fonctionnel.</p>
-            </div>`; });
 };
 
