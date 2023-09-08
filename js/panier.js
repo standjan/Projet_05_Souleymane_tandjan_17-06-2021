@@ -3,22 +3,22 @@ nbArticlesDansPanier();
 
 function pagePanier() {
 
-    let getPanier = localStorage.getItem("panierKey");
-    let numGetPanier = JSON.parse(getPanier);
+    let getPanier = localStorage.getItem("panierKey");  // dans le local storage on renvoi la valeur de la clé associé//
+    let numGetPanier = JSON.parse(getPanier);     // il verifie la quantité de l'article dans le panier, traite par Json parse avant de renvoyer//
     
     if (numGetPanier.length == 0) {
-        const messagePanierVide = document.querySelector(".paniervide ")
+        const messagePanierVide = document.querySelector(".paniervide ") 
         messagePanierVide.classList.remove("cache");
     }
 //------choisir
-    for (let articleChoisi in numGetPanier) {
+    for (let articleChoisi in numGetPanier) {  // La boucle itération fixe for, pour le variable  d'article choisi et la quantité d'article //
     
         let articlePanier = numGetPanier[articleChoisi];
-        let convertInArray = JSON.parse(articlePanier);
+        let convertInArray = JSON.parse(articlePanier);  // conertir le tableau, traiter avant de renvoyer //
         
-        const tableauPanier = document.querySelector("#liste-panier");
+        const tableauPanier = document.querySelector("#liste-panier"); // la liste du tableau panier //
 
-        let carteFormatPanier = document.createElement("div");
+        let carteFormatPanier = document.createElement("div"); // creer l'element DIV dans le panier//
         carteFormatPanier.classList.add("articles-panier-beta")
         carteFormatPanier.innerHTML = 
         `
@@ -27,7 +27,7 @@ function pagePanier() {
         <div class="price"> ${convertInArray.price} </div>
         `;
 
-        tableauPanier.appendChild(carteFormatPanier);
+        tableauPanier.appendChild(carteFormatPanier); // on ajouter le noeud de la carte panier
 
     }
 //Ajout de button supprimer
@@ -35,33 +35,33 @@ function pagePanier() {
 
     function addButtonDelete() {
 
-        numOfArticles = numGetPanier.length;
+        numOfArticles = numGetPanier.length;  // le panier est vide //
         let i = 0
 
-        for (i; i < numOfArticles; i++) {
-            let artPanier = document.querySelector(".articles-panier-beta");
+        for (i; i < numOfArticles; i++) {  // la boucle itération for //
+            let artPanier = document.querySelector(".articles-panier-beta"); // on selectionne l'article a supprimer dans la liste //
             artPanier.innerHTML += 
             `<div class="delete" id=${i} onclick="deleteArt(id)"><i class="fas fa-trash-alt"></i></div>`;
             artPanier.classList.add("articles-panier");
             artPanier.classList.remove("articles-panier-beta");
         }
     }
-//---calcul le total de prix
-    const allPrices = document.querySelectorAll(".price"); 
-    const arrayAllPrices = Array.from(allPrices)
+//---on calcul le total de prix
+    const allPrices = document.querySelectorAll(".price");  // on selectionne l'ensemble des articles choisi//
+    const arrayAllPrices = Array.from(allPrices)   // on declare le total du prix des articles dans un tableau //
 
     const nbPrices = arrayAllPrices.length
     let totalPanier = 0;
     
-    for (let j = 0; j < nbPrices; j++) {
-        let strBasis = arrayAllPrices[j].textContent;
-        let newStrBasis = strBasis.substring(0, strBasis.length - 2);
-        let convertStrInNum = parseInt(newStrBasis);
+    for (let j = 0; j < nbPrices; j++) { // la boucle d'iteration //
+        let strBasis = arrayAllPrices[j].textContent; // on a une variable permettant de manipuler le tableau //
+        let newStrBasis = strBasis.substring(0, strBasis.length - 2); //Une nouvelle chaîne contenant la partie indiquée de la chaîne donnée.//
+        let convertStrInNum = parseInt(newStrBasis); // analyse une chaîne de caractère fournie en argument et renvoie un entier exprimé dans une base donnée.//
 
         totalPanier += convertStrInNum;
     }
     
-    const affichageTotal = document.querySelector("#panierTotaux");
+    const affichageTotal = document.querySelector("#panierTotaux"); // on affiche le panier ttotaux en crénat l'element DIV dans le DOM//
     let blocTotal = document.createElement("div");
     blocTotal.innerHTML =
     `<span>TOTAL :</span><span class="totalPanierN">${totalPanier} €</span>`;
@@ -73,15 +73,14 @@ function pagePanier() {
 
 function deleteArt(indexDel) {
 
-    let getPanierForDel = JSON.parse(localStorage.getItem("panierKey"));
-    getPanierForDel.splice(indexDel, 1);
-    const newPanier = JSON.stringify(getPanierForDel);
-    localStorage.setItem("panierKey", newPanier);
+    let getPanierForDel = JSON.parse(localStorage.getItem("panierKey"));  // Le variable panier delete, on traite  avant de renvoie la clée valeur//
+    getPanierForDel.splice(indexDel, 1); // modifie le contenu d'un tableau en retirant des éléments et/ou en ajoutant de nouveaux éléments//
+    const newPanier = JSON.stringify(getPanierForDel); // Une nouvelle chaîne contenant la partie indiquée de la chaîne donnée. //
+    localStorage.setItem("panierKey", newPanier); // la clée duo-valeur, elle met à jour la valeur si la clé existe déjà
     
     alert("Votre article à bien été supprimé");
-    setTimeout(300);
-    window.location.reload();
-    
+    setTimeout(300); //on a ajouter un minuteur qui exécute une fonction ou un code donné après la fin du délai 300 //
+    window.location.reload(); //  recharge la ressource depuis l'URL actuelle. // 
 }
 //--Afficher le nombre d'article du panier
 function nbArticlesDansPanier() {
@@ -162,7 +161,7 @@ function envoieFormulaire() {
 
 
                 // Envoie des données avec FETCH
-                fetch("http://localhost:3000/api/teddies/order",
+                fetch("http://localhost:3000/api/teddies/order", // on recupere l'information de la commande
                 {
                     headers: {
                     'Accept': 'application/json',
