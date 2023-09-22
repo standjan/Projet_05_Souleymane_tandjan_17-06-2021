@@ -2,17 +2,17 @@ mainIndex()
 
 function mainIndex(){
 
-    const mainIndex = document.querySelector ("#mainIndex");       // on declare MainIndex pour retourner l'element MainIdex dans le DOM//
-    const msgAccueil = document.querySelector(".msg-accueil");     // on declare MsgAccueil = pour retourner l'element Msg-accueil //
+    const mainIndex = document.querySelector ("#mainIndex");       // je declare la constance MENU pour recuperer l'element MENU dans le DOM//
+    const msgAccueil = document.querySelector(".msg-accueil");     // je Declare la constance MsgAccueil pour recuperer l'element Msg-accueil dans le DOM//
 
 
     let urlApi = `http://localhost:3000/api/teddies/`;
 
-    fetch(urlApi)                    //  on fait le fetch pour recuperer informations des Ours//
+    fetch(urlApi)                    //  JE  fais le fetch pour recuperer informations des Ours//
 
        .then(function(response) {     
 
-            if (response.serveur) {   // on utilise la condition SI au cas ou le serveur ne fonctionne pour retourner ce message //
+            if (response.serveur) {   // J'utilise la condition SI au cas ou le serveur ne fonctionne pour retourner ce message //
                 const serveur = response.serveur;
             
                 mainIndex.innerHTML = 
@@ -22,10 +22,10 @@ function mainIndex(){
             </div>`;
         };
 
-        return response.json();   // il nous retourne en JSON //
+        return response.json();   // il me retourne en JSON //
 
     })
-    .then(function(response) {   
+    .then(function(response) {        
 
         const objets = response;
         const nombreDePeluches = objets.length;

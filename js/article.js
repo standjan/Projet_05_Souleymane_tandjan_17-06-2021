@@ -3,10 +3,10 @@ mainArticle()
 function mainArticle() {
 
     const urlWindow = window.location.search;  //--obtenir la page actuelle, et renvoie la partie Querystring y compris le point ?--//
-    let idArticle = urlWindow.slice(1);        //-- crée un tableau virtuelle des articles avec la methode Slice--//
+    let idArticle = urlWindow.slice(1);        //-- crée un tableau virtuelle des articles avec la methode SLICE--//
     let urlArticle = `http://localhost:3000/api/teddies/` + idArticle; // on recupere l'information d'un ours//
 
-    const mainArticle = document.querySelector("#mainArticle");  // Declarée une constance de MainArticle pour selecetionnée ces elements //
+    const mainArticle = document.querySelector("#mainArticle");  // Declarée une constance de MenuArticle pour selecetionnée ces elements et renvoyer//
 
     fetch(urlArticle)   // la promèsse pour recuperer l'URL des articles //
     .then(response => response.json() // .repondre en JSON //
