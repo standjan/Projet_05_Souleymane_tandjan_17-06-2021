@@ -8,7 +8,7 @@ function createPanier() {
     if (localStorage.getItem('panierKey') == null) { 
         
         let panierArray = [];  // variable tableau vide //
-        let panierArrayStr = JSON.stringify(panierArray); // variable pour traiter la chaine de caracter du tableau et ses elements//
+        let panierArrayStr = JSON.stringify(panierArray); // variable pour traiter la chaine de caractere du tableau et ses elements//
         localStorage.setItem("panierKey", panierArrayStr);  // lorsque lui sont passées le duo clé-valeur, les ajoute à l'emplacement de stockage, sinon elle met à jour la valeur si la clé existe déjà  //
         
     }
